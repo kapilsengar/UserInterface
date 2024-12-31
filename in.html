@@ -1,0 +1,448 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SaaS Delivery Management Software</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+        .slide-in-left {
+            animation: slideInLeft 1s ease-in-out;
+        }
+        .slide-in-right {
+            animation: slideInRight 1s ease-in-out;
+        }
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hover-animate:hover {
+            animation: hoverAnimation 0.5s ease-in-out forwards;
+        }
+        @keyframes hoverAnimation {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        .hover-bounce:hover {
+            animation: hoverBounce 0.5s ease-in-out forwards;
+        }
+        @keyframes hoverBounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+        .hover-underline:hover {
+            animation: hoverUnderline 0.5s ease-in-out forwards;
+        }
+        @keyframes hoverUnderline {
+            from {
+                border-bottom-width: 0;
+            }
+            to {
+                border-bottom-width: 2px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <div class="bg-gradient-to-b from-indigo-800 to-indigo-400 text-xl text-white">
+        <header class="flex justify-between items-center p-6 fade-in">
+            <div class="flex items-center space-x-4">
+                <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 59" width="157" height="59">
+                    <defs>
+                        <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+                            <path d="m-165-47h1587v7502h-1587z"/>
+                        </clipPath>
+                        <linearGradient id="P" gradientUnits="userSpaceOnUse"/>
+                        <linearGradient id="g1" x2="1" href="#P" gradientTransform="matrix(28.169,75.925,-75.925,28.169,1.831,-16.925)">
+                            <stop stop-color="#ce5beb"/>
+                            <stop offset="1" stop-color="#5b61eb"/>
+                        </linearGradient>
+                    </defs>
+                    <style>
+                        .a { fill: url(#g1); }
+                        .b { fill: #fff; }
+                    </style>
+                    <g clip-path="url(#cp1)">
+                        <path class="a" d="m30 59c-16 0-29-13-29-29 0-16 13-29 29-29 16 0 29 13 29 29 0 16-13 29-29 29z"/>
+                        <path fill-rule="evenodd" class="b" d="m71.3 37.8h4.9c0 2.1 1.8 3.2 3.8 3.2 1.8 0 3.6-1 3.6-2.7 0-1.7-2.1-2.2-4.5-2.7-3.4-0.9-7.5-1.9-7.5-6.7 0-4.3 3.2-6.7 8.1-6.7 5.2 0 8.1 2.7 8.1 7.2h-4.8c0-1.9-1.6-2.8-3.4-2.8-1.6 0-3.1 0.6-3.1 2.1 0 1.6 1.9 2.1 4.3 2.6 3.4 0.9 7.7 2 7.7 7 0 4.8-3.9 7.1-8.5 7.1-5.2 0-8.7-2.8-8.7-7.6zm39.6-10.1v17.3h-3.6l-0.5-1.6c-1.4 1.3-3.4 2.1-5.6 2.1-5.1 0-9-3.9-9-9.1 0-5.3 3.9-9.2 9-9.2 2.3 0 4.2 0.8 5.7 2.2l0.5-1.7zm-4.6 8.7c0-2.8-1.9-4.8-4.7-4.8-2.7 0-4.7 2-4.7 4.8 0 2.6 2 4.7 4.7 4.7 2.8 0 4.7-2 4.7-4.7zm28-8.7v17.3h-3.7l-0.4-1.6c-1.5 1.3-3.4 2.1-5.6 2.1-5.2 0-9-3.9-9-9.1 0-5.3 3.8-9.2 9-9.2 2.3 0 4.2 0.8 5.7 2.2l0.5-1.7zm-4.6 8.7c0-2.8-2-4.8-4.7-4.8-2.7 0-4.7 2-4.7 4.8 0 2.6 2 4.7 4.7 4.7 2.7 0 4.7-2 4.7-4.7zm9.4 1.4h4.9c0 2.1 1.8 3.2 3.8 3.2 1.8 0 3.6-1 3.6-2.7 0-1.7-2-2.2-4.4-2.7-3.4-0.9-7.5-1.9-7.5-6.7 0-4.3 3.1-6.7 8.1-6.7 5.1 0 8.1 2.7 8.1 7.2h-4.8c0-1.9-1.6-2.8-3.4-2.8-1.6 0-3.2 0.6-3.2 2.1 0 1.6 1.9 2.1 4.3 2.6 3.4 0.9 7.7 2 7.7 7 0 4.8-3.8 7.1-8.5 7.1-5.1 0-8.7-2.8-8.7-7.6zm-95.1-15.2v12.3c0 0.5-0.5 0.7-0.9 0.4l-3.7-3.7-5.9 5.8c-1.4 1.4-3.5 1.4-4.9 0l-3.6-3.6-4.2 4.2c-0.6 0.7-1.6 1-2.4 1-0.8 0-1.7-0.3-2.4-1-1.3-1.4-1.3-3.5 0-4.9l6.6-6.5c1.3-1.2 3.6-1.2 4.9 0l3.6 3.6 3.4-3.4-4-3.9c-0.3-0.3-0.1-0.9 0.4-0.9h12.6c0.3 0 0.5 0.2 0.5 0.6z"/>
+                    </g>
+                </svg>
+            </div>
+            <nav class="hidden md:flex gap-3 space-x-8">
+                <a class="hover:text-gray-300 hover-underline" href="#">Solutions</a>
+                <a class="hover:text-gray-300 hover-underline" href="#">Products</a>
+                <a class="hover:text-gray-300 hover-underline" href="#">About</a>
+                <a class="hover:text-gray-300 hover-underline" href="#">Contact</a>
+                <a class="text-blue-600 bg-white px-6 py-2 rounded-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 hover-bounce" href="#">Login</a>
+                <a class="text-white border border-white px-6 py-2 rounded hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 hover-bounce" href="#">Sign up</a>
+            </nav>
+        </header>
+        <main class=" flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-12 md:py-24 fade-in-up">
+            <div class="text-center md:text-left md:w-1/2 space-y-6 slide-in-left">
+                <h1 class="text-4xl md:text-5xl font-bold hover-animate">SaaS Delivery </h1>
+                <h1 class="text-4xl md:text-5xl font-bold hover-animate">Management Software</h1>
+                <p class="text-lg">Track and optimize routes in real-time</p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a class="bg-white text-blue-600 px-6 py-3 rounded font-bold hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 hover-bounce" href="#">Get Started</a>
+                    <a class="flex items-center space-x-2 text-white hover:text-gray-300 transition duration-300 ease-in-out transform hover:scale-105 hover-bounce" href="#">
+                        <i class="fas fa-play-circle text-2xl"></i>
+                        <span>Watch how it works</span>
+                    </a>
+                </div>
+            </div>
+            <div class="relative mt-10 md:mt-0 md:w-1/2 flex justify-center slide-in-right">
+                <img alt="Laptop with software" class="h-96 md:w-2/3 bounce" height="500" src="./images/banner-desktop.png" width="400"/>
+                <img alt="Smartphone with app" class="absolute bottom-0 h-80 w-20 right-2 w-1/2 md:w-1/4 bounce" src="./images/Mobile.png" width="200"/>
+            </div>
+        </main>
+        
+        <section class="bg-white text-blue-600 py-6 fade-in">
+            <div class="flex justify-center space-x-8">
+                <img alt="Puma logo" class="h-10" height="40" src="./images/2.jpg" width="100"/>
+                <img alt="Nykaa logo" class="h-10" height="40" src="images/1.png" width="100"/>
+                <img alt="Nykaa logo" class="h-10" height="40" src="images/3.webp" width="100"/>
+                <img alt="1mg logo" class="h-10" height="40" src="https://storage.googleapis.com/a1aa/image/yHCzDrtMCdqeTqxWedKtZqdwM5OjJLb1rR9mFR7oVvpRhaAUA.jpg" width="100"/>
+                <img alt="PharmEasy logo" class="h-10" height="40" src="https://storage.googleapis.com/a1aa/image/jHVBbFIt9t5uEpOTbEfDkMZIOcvislCWlce36cY7Ji2NhaAUA.jpg" width="100"/>
+                
+            </div>
+        </section>
+    
+      </div>
+    </section>
+    
+   
+    <!-- Solutions Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-10 fade-in slideshow">Solutions for every delivery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg card hover:shadow-2xl transition-shadow duration-300">
+                    <img alt="Food delivery icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/vtcZW6LC8IJ4Ix4icp5cNdAv1AUNu4jWggBfHk5YcWAYTOAKA.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Food</h3>
+                    <p>Leverage our framework to deliver food seamlessly and efficiently.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg card border-2 border-indigo-500 hover:shadow-2xl transition-shadow duration-300">
+                    <img alt="Grocery delivery icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/jOSTpBrBf71jPCW8iUSIro1peDZrtszzzZF6yBmlwIQ3mcAUA.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Grocery</h3>
+                    <p>On-demand grocery delivery with real-time tracking and updates.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg card hover:shadow-2xl transition-shadow duration-300">
+                    <img alt="Courier delivery icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/dfspMH3TaQzrD640DfVA34HuNUU0nP6ZllcLmvMs6wVumcAUA.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Courier</h3>
+                    <p>Optimized routes to ensure timely and safe delivery of packages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Delivery Business Interfaces Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-10 transition-fade visible">Delivery Business Interfaces</h2>
+            <div class="flex justify-center space-x-4 mb-10">
+                <a class="text-blue-500 border-b-2 border-blue-500 pb-2" href="#">Dashboard</a>
+                <a class="text-gray-500 hover:text-blue-500" href="#">Customer App</a>
+                <a class="text-gray-500 hover:text-blue-500" href="#">Agent App</a>
+            </div>
+            <img alt="Dashboard interface" class="mx-auto" height="400" src="images/dashboard.png" width="800"/>
+        </div>
+    </section>
+    <!-- Proof Section -->
+    <section class="py-20 bg-gradient-to-r from-purple-500 to-blue-500 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-10">All in one proof for final mile delivery solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="hover-animate">
+                    <img alt="Real-time tracking icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/KxqoTBxVIA6lENZAsralJj3sSS3XZ44uXAJTHcrDBrsoJHAF.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Real-time tracking</h3>
+                    <p>Track your deliveries in real-time with our advanced tracking system.</p>
+                </div>
+                <div class="hover-animate">
+                    <img alt="Proof of Delivery icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/vOLL6OMJwq6hMhe2ieuD9VDKetIWhf3CGC4XpXayf4afoJHAF.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Proof of Delivery</h3>
+                    <p>Get proof of delivery with photos, signatures, and more.</p>
+                </div>
+                <div class="hover-animate">
+                    <img alt="Real-time tracking icon" class="mx-auto mb-4" height="100" src="https://storage.googleapis.com/a1aa/image/KxqoTBxVIA6lENZAsralJj3sSS3XZ44uXAJTHcrDBrsoJHAF.jpg" width="100"/>
+                    <h3 class="text-xl font-bold mb-2">Real-time tracking</h3>
+                    <p>Track your deliveries in real-time with our advanced tracking system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold mb-2">What is SaaS?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque tempor tincidunt. Aliquam erat volutpat.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold mb-2">Lorem ipsum dolor sit amet, consectetur?</h3>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold mb-2">Duis aute irure dolor in reprehenderit in voluptate velit esse?</h3>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold mb-2">Sed ut perspiciatis unde omnis iste natus error sit?</h3>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Ut enim ad minima veniam, quis nostrum exercitationem?</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- What Makes Us Different Section -->
+    <section class="py-20 bg-white">
+       <div class="container mx-auto px-6">
+                   
+                   <div class="flex flex-col md:flex-row items-center">
+                       <img alt="Building image" class="w-full md:w-1/2 mb-6 md:mb-0 hover-shadow" height="300" src="images/building.png" width="400"/>
+                       <div class="md:ml-10">
+                        <h2 class="text-3xl font-bold text-center mb-20">What Makes Us Different?</h2>
+                        <h2 class="  text-center mb-40">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt rerum soluta earum vero quam necessitatibus perferendis, odit obcaecati, hic autem magni consequuntur, fuga expedita. Id natus asperiores commodi cumque.</h2>
+                           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            
+                               <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                                   <h3 class="text-xl font-bold mb-2">Experienced</h3>
+                                   <p>Our team has years of experience in the delivery industry.</p>
+                               </div>
+                               <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                                   <h3 class="text-xl font-bold mb-2">Competitive Price</h3>
+                                   <p>We offer the best prices for our delivery solutions.</p>
+                               </div>
+                               <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                                   <h3 class="text-xl font-bold mb-2">On Time</h3>
+                                   <p>We ensure timely delivery of your packages.</p>
+                               </div>
+                               <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                                   <h3 class="text-xl font-bold mb-2">Best Materials</h3>
+                                   <p>We use the best materials for packaging and delivery.</p>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </section>
+
+
+    <!-- Advanced Fleet Tracking Section -->
+     
+
+
+    <section
+    class="py-20 bg-gradient-to-r from-purple-500 to-blue-500 text-white relative bg-cover bg-center"
+    style="background-image:url('images/Tracking-bg.png')" 
+  >
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between relative z-10">
+      <!-- Text Section -->
+      <div class="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
+        <h2 class="text-4xl font-bold mb-6">Advanced Fleet Tracking Solution Tracker</h2>
+        <p class="mb-6">
+          Manage your fleet efficiently with our advanced tracking solutions. 
+          Monitor, optimize, and gain insights in real time.
+        </p>
+        <div class="flex justify-center lg:justify-start space-x-4">
+          <a
+            class="bg-yellow-500 text-white px-6 py-3 rounded-full hover:bg-yellow-600"
+            href="#"
+          >
+            Get Started
+          </a>
+          <a
+            class="bg-white text-purple-500 px-6 py-3 rounded-full hover:bg-gray-200"
+            href="#"
+          >
+            Watch how it works
+          </a>
+        </div>
+      </div>
+  
+      <!-- Image Section -->
+      <div class="lg:w-1/2">
+        <img
+          src="images/tracking-user.png"
+          alt="Fleet Tracking Illustration"
+          class="w-full h-auto rounded-lg shadow-lg"
+        />
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+
+
+    <!-- Footer -->
+    <footer class="bg-white py-10">
+        <div class="container mx-auto px-4">
+         <div class="flex flex-wrap justify-between">
+          <div class="w-full md:w-1/5 mb-6 md:mb-0">
+           <div class="flex items-center mb-4">
+            
+           
+            <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 157 59" width="157" height="59">
+                <defs>
+                    <clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+                        <path d="m-165-47h1587v7502h-1587z"/>
+                    </clipPath>
+                    <linearGradient id="P" gradientUnits="userSpaceOnUse"/>
+                    <linearGradient id="g1" x2="1" href="#P" gradientTransform="matrix(28.169,75.925,-75.925,28.169,1.831,-16.925)">
+                        <stop stop-color="#ce5beb"/>
+                        <stop offset="1" stop-color="#5b61eb"/>
+                    </linearGradient>
+                </defs>
+                <style>
+                    .a { fill: url(#g1); }
+                    .b { fill: #fff; }
+                </style>
+                <g clip-path="url(#cp1)">
+                    <path class="a" d="m30 59c-16 0-29-13-29-29 0-16 13-29 29-29 16 0 29 13 29 29 0 16-13 29-29 29z"/>
+                    <path fill-rule="evenodd" class="b" d="m71.3 37.8h4.9c0 2.1 1.8 3.2 3.8 3.2 1.8 0 3.6-1 3.6-2.7 0-1.7-2.1-2.2-4.5-2.7-3.4-0.9-7.5-1.9-7.5-6.7 0-4.3 3.2-6.7 8.1-6.7 5.2 0 8.1 2.7 8.1 7.2h-4.8c0-1.9-1.6-2.8-3.4-2.8-1.6 0-3.1 0.6-3.1 2.1 0 1.6 1.9 2.1 4.3 2.6 3.4 0.9 7.7 2 7.7 7 0 4.8-3.9 7.1-8.5 7.1-5.2 0-8.7-2.8-8.7-7.6zm39.6-10.1v17.3h-3.6l-0.5-1.6c-1.4 1.3-3.4 2.1-5.6 2.1-5.1 0-9-3.9-9-9.1 0-5.3 3.9-9.2 9-9.2 2.3 0 4.2 0.8 5.7 2.2l0.5-1.7zm-4.6 8.7c0-2.8-1.9-4.8-4.7-4.8-2.7 0-4.7 2-4.7 4.8 0 2.6 2 4.7 4.7 4.7 2.8 0 4.7-2 4.7-4.7zm28-8.7v17.3h-3.7l-0.4-1.6c-1.5 1.3-3.4 2.1-5.6 2.1-5.2 0-9-3.9-9-9.1 0-5.3 3.8-9.2 9-9.2 2.3 0 4.2 0.8 5.7 2.2l0.5-1.7zm-4.6 8.7c0-2.8-2-4.8-4.7-4.8-2.7 0-4.7 2-4.7 4.8 0 2.6 2 4.7 4.7 4.7 2.7 0 4.7-2 4.7-4.7zm9.4 1.4h4.9c0 2.1 1.8 3.2 3.8 3.2 1.8 0 3.6-1 3.6-2.7 0-1.7-2-2.2-4.4-2.7-3.4-0.9-7.5-1.9-7.5-6.7 0-4.3 3.1-6.7 8.1-6.7 5.1 0 8.1 2.7 8.1 7.2h-4.8c0-1.9-1.6-2.8-3.4-2.8-1.6 0-3.2 0.6-3.2 2.1 0 1.6 1.9 2.1 4.3 2.6 3.4 0.9 7.7 2 7.7 7 0 4.8-3.8 7.1-8.5 7.1-5.1 0-8.7-2.8-8.7-7.6zm-95.1-15.2v12.3c0 0.5-0.5 0.7-0.9 0.4l-3.7-3.7-5.9 5.8c-1.4 1.4-3.5 1.4-4.9 0l-3.6-3.6-4.2 4.2c-0.6 0.7-1.6 1-2.4 1-0.8 0-1.7-0.3-2.4-1-1.3-1.4-1.3-3.5 0-4.9l6.6-6.5c1.3-1.2 3.6-1.2 4.9 0l3.6 3.6 3.4-3.4-4-3.9c-0.3-0.3-0.1-0.9 0.4-0.9h12.6c0.3 0 0.5 0.2 0.5 0.6z"/>
+                </g>
+            </svg>
+            <span class="text-xl font-bold">
+             SaaS
+            </span>
+           </div>
+           <p class="text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+           </p>
+          </div>
+          <div class="w-full md:w-1/5 mb-6 md:mb-0">
+           <h3 class="text-lg font-semibold mb-4">
+            Product
+           </h3>
+           <ul class="text-gray-600">
+            <li class="mb-2">
+             <a href="#">
+              Features
+             </a>
+            </li>
+            <li class="mb-2">
+             <a href="#">
+              API
+             </a>
+            </li>
+            <li class="mb-2">
+             <a href="#">
+              Solutions
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="w-full md:w-1/5 mb-6 md:mb-0">
+           <h3 class="text-lg font-semibold mb-4">
+            Company
+           </h3>
+           <ul class="text-gray-600">
+            <li class="mb-2">
+             <a href="#">
+              About Us
+             </a>
+            </li>
+            <li class="mb-2">
+             <a href="#">
+              Blog
+             </a>
+            </li>
+            <li class="mb-2">
+             <a href="#">
+              Contact us
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="w-full md:w-1/5 mb-6 md:mb-0">
+           <h3 class="text-lg font-semibold mb-4">
+            Support
+           </h3>
+           <ul class="text-gray-600">
+            <li class="mb-2">
+             <a href="#">
+              Support center
+             </a>
+            </li>
+            <li class="mb-2">
+             <a href="#">
+              System status
+             </a>
+            </li>
+            <li class="mb-2">
+             <a href="#">
+              Languages
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="w-full md:w-1/5">
+           <h3 class="text-lg font-semibold mb-4">
+            Follow Us
+           </h3>
+           <div class="flex space-x-4">
+            <a class="text-blue-600" href="#">
+             <i class="fab fa-facebook-f">
+             </i>
+            </a>
+            <a class="text-blue-600" href="#">
+             <i class="fab fa-twitter">
+             </i>
+            </a>
+            <a class="text-blue-600" href="#">
+             <i class="fab fa-instagram">
+             </i>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </footer>
+</body>
+</html>
